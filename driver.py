@@ -182,6 +182,7 @@ while (1):
 #################	
 # clean up here #
 #################
+
 cv2.destroyAllWindows()
 vs.stop()
 

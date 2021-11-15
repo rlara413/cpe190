@@ -12,6 +12,7 @@ import keyboard
 import threading
 import numpy as np
 import argparse
+import sleep
 import imutils
 import time
 import sys
@@ -196,7 +197,7 @@ while (1):
             cv2.putText(frame, label, (startX, startY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
             cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
         
-        # Comment if not using a UI
+        # Comment both these lines to remove the UI
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
 

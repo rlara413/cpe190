@@ -12,7 +12,7 @@ import keyboard
 import threading
 import numpy as np
 import argparse
-import sleep
+#import sleep
 import imutils
 import time
 import sys
@@ -147,8 +147,37 @@ def unlock():
     GPIO.output(17, GPIO.LOW)
     sleep(2)
     
+# def active():
+#     go = 0
+#     go = input("welcome please press 1 and then enter: ")
+#     go = int(go)
+#     if go == 1:
+#         return go
+# 
+# def assist():
+#     assist = 0
+#     assist = input("if you need assistance press 2 then enter")
+#     assist = int(assist)
+#     
+#     if assist == 2:
+#         print("calling for assistance")
+#         time.sleep(10)
+#         
+# def override():
+#     over = 0
+#     over = input("in an override is needed press 3 then enter, in not press 1 then enter: ")
+#     over = input(over)
+#     if over == 3:
+#         print("please wait a momenent while door unlocks")
+#         time.sleep(5)
+#         print("door is unlocking")
+#         unlock()
+    
+    
+    
+    
 # DRIVER BEGINS HERE
-while (1):
+while (1):  
     try:
         presence = GPIO.input(7) 
         if (presence): 
@@ -158,7 +187,7 @@ while (1):
             time.sleep(1)
             counter += 1
 
-        if (counter == 10):
+        if (counter >= 10):
             print (peoplecount) 
             people.save_value({'value':peoplecount})
             counter = 0

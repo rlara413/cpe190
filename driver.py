@@ -143,9 +143,9 @@ def unlock():
     GPIO.setup(17, GPIO.OUT)
     print("door unlocked please enter before the door locks again \n")
     GPIO.output(17, GPIO.HIGH)
-    sleep(5)
+    time.sleep(5)
     GPIO.output(17, GPIO.LOW)
-    sleep(2)
+    time.sleep(2)
     
 # def active():
 #     go = 0
@@ -192,6 +192,8 @@ while (1):
             people.save_value({'value':peoplecount})
             counter = 0
             peoplev = 0
+            print('MASK DETECTED')
+            tempsense()
 
         # grab the frame from the threaded video stream and resize it
         # to have a maximum width of 400 pixels
@@ -209,9 +211,9 @@ while (1):
             (startX, startY, endX, endY) = box
             (mask, withoutMask) = pred
             
-            if mask > withoutMask:
-                print('MASK DETECTED')
-                tempsense()
+            #if mask > withoutMask:
+            #    print('MASK DETECTED')
+            #    tempsense()
 
             # determine the class label and color we'll use to draw
             # the bounding box and text
